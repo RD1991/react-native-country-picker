@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform, I18nManager } from 'react-native';
 import { Styles, ColorDarkMode, ColorLightMode } from "../styles";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 
@@ -68,7 +68,8 @@ export const getStyles = (darkTheme = true) => {
         },
         textInput: {
             padding: 10,
-            flex: 1
+            flex: 1,
+            textAlign : I18nManager.isRTL ? 'right' : 'left'
         },
         searchClose: {
             alignItems: "flex-end",
